@@ -44,5 +44,13 @@
       }
     ],
     "no-unused-expressions": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/test/**/*.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
