@@ -7,6 +7,7 @@
   --tertiary-color: #8a470c;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
+  --discount-color: #c0392b;
 
   /* sizes */
   --font-base: 18px;
@@ -201,6 +202,49 @@ button {
 
 .product-detail img {
   width: 100%;
+}
+
+/* Discount indicator on product detail pages */
+.product-detail__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.product-card__price--original {
+  text-decoration: line-through;
+  color: var(--dark-grey);
+  opacity: 0.6;
+  font-size: var(--small-font);
+}
+
+.product-card__price--final {
+  font-weight: bold;
+  color: var(--tertiary-color);
+  font-size: var(--large-font);
+}
+
+.discount-badge {
+  display: inline-block;
+  background-color: var(--discount-color);
+  color: white;
+  font-weight: bold;
+  font-size: var(--small-font);
+  padding: 0.25em 0.6em;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Start cart list card styles */
