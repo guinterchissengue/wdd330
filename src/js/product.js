@@ -11,7 +11,13 @@ function addProductToCart(product) {
     cart = [];
   }
 
-  cart.push(product);
+  const existingItem = cart.find((item) => item.Id === product.Id);
+
+  if (existingItem) {
+    existingItem.Quantity = (existingItem.Quantity || 1) + 1;
+  } else {
+    cart.push({ ...product, Quantity: 1 });
+  }
 
   setLocalStorage('so-cart', cart);
 }
